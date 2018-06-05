@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Booru.Net
 {
-	public class Client
+	public class BooruClient
 	{
         public async Task<IReadOnlyList<SafebooruImage>> GetSafebooruImagesAsync(IReadOnlyList<string> tags)
 		{
