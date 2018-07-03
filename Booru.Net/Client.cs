@@ -8,7 +8,7 @@ namespace Booru.Net
 {
 	public class BooruClient
 	{
-        public async Task<IReadOnlyList<SafebooruImage>> GetSafebooruImagesAsync(IReadOnlyList<string> tags)
+        public async Task<IReadOnlyList<SafebooruImage>> GetSafebooruImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -23,7 +23,7 @@ namespace Booru.Net
 
 			return null;
 		}
-		public async Task<IReadOnlyList<Rule34Image>> GetRule34ImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<Rule34Image>> GetRule34ImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -37,7 +37,7 @@ namespace Booru.Net
 
 			return null;
 		}
-		public async Task<IReadOnlyList<RealbooruImage>> GetRealBooruImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<RealbooruImage>> GetRealBooruImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -51,7 +51,7 @@ namespace Booru.Net
 
 			return null;
 		}
-		public async Task<IReadOnlyList<DanbooruImage>> GetDanbooruImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<DanbooruImage>> GetDanbooruImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -65,7 +65,7 @@ namespace Booru.Net
 
 			return null;
 		}
-		public async Task<IReadOnlyList<GelbooruImage>> GetGelbooruImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<GelbooruImage>> GetGelbooruImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -79,7 +79,7 @@ namespace Booru.Net
 			}
 			else return null;
 		}
-		public async Task<IReadOnlyList<KonaChanImage>> GetKonaChanImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<KonaChanImage>> GetKonaChanImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -93,7 +93,7 @@ namespace Booru.Net
 			}
 			else return null;
 		}
-		public async Task<IReadOnlyList<E621Image>> GetE621ImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<E621Image>> GetE621ImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);
@@ -107,7 +107,7 @@ namespace Booru.Net
 			}
 			else return null;
 		}
-		public async Task<IReadOnlyList<YandereImage>> GetYandereImagesAsync(IReadOnlyList<string> tags)
+		public async Task<IReadOnlyList<YandereImage>> GetYandereImagesAsync(IEnumerable<string> tags)
 		{
 			IList<string> newtags = tags.ToList();
 			var tagstring = String.Join("%20", newtags);

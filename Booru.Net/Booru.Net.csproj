@@ -2,10 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>exsersewo</Authors>
     <Company />
-    <Description></Description>
+    <Description>A Booru based ImageBoard wrapper</Description>
+    <PackageProjectUrl>https://github.com/exsersewo/Booru.Net</PackageProjectUrl>
+    <Copyright>exsersewo</Copyright>
+    <RepositoryUrl>https://github.com/exsersewo/Booru.Net</RepositoryUrl>
+    <RepositoryType>Library</RepositoryType>
+    <PackageTags>booru imageboard api wrapper</PackageTags>
+    <PackageLicenseUrl>https://github.com/exsersewo/Booru.Net/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
