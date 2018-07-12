@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Skuld.Models.API.Booru
+﻿namespace Booru.Net
 {
     public enum BooruTypes
     {

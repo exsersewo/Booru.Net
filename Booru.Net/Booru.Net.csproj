@@ -5,13 +5,23 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>exsersewo</Authors>
     <Company />
-    <Description>A Booru based ImageBoard wrapper</Description>
+    <Description>An asynchronous Booru based ImageBoard wrapper.
+
+It supports:
+Safebooru,
+Rule34,
+Realbooru,
+Danbooru,
+Gelbooru,
+Konachan,
+E621 and
+Yande.re</Description>
     <PackageProjectUrl>https://github.com/exsersewo/Booru.Net</PackageProjectUrl>
     <Copyright>exsersewo</Copyright>
     <RepositoryUrl>https://github.com/exsersewo/Booru.Net</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>booru imageboard api wrapper</PackageTags>
-    <PackageLicenseUrl>https://github.com/exsersewo/Booru.Net/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/exsersewo/Booru.Net/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
