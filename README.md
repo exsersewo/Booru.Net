@@ -32,3 +32,6 @@ List of Methods in Wrapper:
 - `GetKonaChanImagesAsync(string[] tags)`
 - `GetYandereImagesAsync(string[] tags)`
 - `GetRealBooruImagesAsync(string[] tags)`
+
+# Contributing
+If you wish to add more booru's to the wrapper/make the code better/optimise the code, please fork your own version and pull-request it. If you are planning on adding another booru to the wrapper, please do it in a similar style to the currently existing methods.
