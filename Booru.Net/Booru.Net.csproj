@@ -23,6 +23,7 @@ Yande.re</Description>
     <PackageTags>booru imageboard api wrapper</PackageTags>
     <PackageLicenseUrl>https://github.com/exsersewo/Booru.Net/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

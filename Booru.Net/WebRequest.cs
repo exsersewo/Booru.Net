@@ -2,6 +2,7 @@
 using System.Net;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 namespace Booru.Net
 {
@@ -9,12 +10,14 @@ namespace Booru.Net
     {
 		public static HttpWebRequest CreateWebRequest(Uri uri)
 		{
-			var cli = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+            var ver = Assembly.GetExecutingAssembly().GetName().Version;
 
-			cli.AllowAutoRedirect = true;
+            var cli = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+            cli.UserAgent = "Mozilla/5.0 Booru.Net/{VERSION} +https://github.com/exsersewo/Booru.Net".Replace("{VERSION}", $"{ver.Major}.{ver.MajorRevision}.{ver.Minor}.{ver.MinorRevision}");
+            cli.AllowAutoRedirect = true;
 			cli.KeepAlive = false;
 			cli.Timeout = 20000;
-			cli.ProtocolVersion = HttpVersion.Version10;
+			cli.ProtocolVersion = HttpVersion.Version11;
 
 			return cli;
 		}

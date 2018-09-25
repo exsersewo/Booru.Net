@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booru.Net", "Booru.Net\Booru.Net.csproj", "{BC612FDE-FC2D-42D8-AD7F-988874B6A839}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booru.Net", "Booru.Net\Booru.Net.csproj", "{BC612FDE-FC2D-42D8-AD7F-988874B6A839}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booru.Net.Tests", "Booru.Net.Tests\Booru.Net.Tests.csproj", "{747B6EAC-E4EB-4882-BDEB-5DEF9A3CA3E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BC612FDE-FC2D-42D8-AD7F-988874B6A839}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC612FDE-FC2D-42D8-AD7F-988874B6A839}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC612FDE-FC2D-42D8-AD7F-988874B6A839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747B6EAC-E4EB-4882-BDEB-5DEF9A3CA3E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747B6EAC-E4EB-4882-BDEB-5DEF9A3CA3E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747B6EAC-E4EB-4882-BDEB-5DEF9A3CA3E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747B6EAC-E4EB-4882-BDEB-5DEF9A3CA3E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

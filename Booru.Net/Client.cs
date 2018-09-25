@@ -121,5 +121,22 @@ namespace Booru.Net
 			}
 			else return null;
 		}
-	}
+
+        public async Task<IReadOnlyList<SafebooruImage>> GetSafebooruImagesAsync(params string[] tags)
+            => await GetSafebooruImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<Rule34Image>> GetRule34ImagesAsync(params string[] tags)
+            => await GetRule34ImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<RealbooruImage>> GetRealBooruImagesAsync(params string[] tags)
+            => await GetRealBooruImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<DanbooruImage>> GetDanbooruImagesAsync(params string[] tags)
+            => await GetDanbooruImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<GelbooruImage>> GetGelbooruImagesAsync(params string[] tags)
+            => await GetGelbooruImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<KonaChanImage>> GetKonaChanImagesAsync(params string[] tags)
+            => await GetKonaChanImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<E621Image>> GetE621ImagesAsync(params string[] tags)
+            => await GetE621ImagesAsync(tags.AsEnumerable());
+        public async Task<IReadOnlyList<YandereImage>> GetYandereImagesAsync(params string[] tags)
+            => await GetYandereImagesAsync(tags.AsEnumerable());
+    }
 }
