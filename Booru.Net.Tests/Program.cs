@@ -12,7 +12,7 @@ namespace Booru.Net.Tests
         {
             var BooruClient = new BooruClient();
 
-            var posts = await BooruClient.GetE621ImagesAsync("nintendo");
+            var posts = await BooruClient.GetRealBooruImagesAsync();
 
             Console.ReadLine();
         }

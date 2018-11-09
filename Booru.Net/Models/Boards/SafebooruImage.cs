@@ -20,19 +20,19 @@ namespace Booru.Net
 		[JsonProperty("image")]
 		public string Image { get; set; }
 
-		[JsonProperty("change")]		
+		[JsonProperty("change")]
 		public ulong Change { get; set; }
 
 		[JsonProperty("owner")]
 		public string Owner { get; set; }
 
 		[JsonProperty("parent_id")]
-		public int ParentID { get; set; }
+		public int? ParentID { get; set; }
 
-		[JsonProperty("rating")]		
+		[JsonProperty("rating")]
 		public Rating Rating { get; set; }
 
-		[JsonProperty("sample")]		
+		[JsonProperty("sample")]
 		public bool Sample { get; set; }
 
 		[JsonProperty("sample_height")]
@@ -42,7 +42,7 @@ namespace Booru.Net
 		public int SampleWidth { get; set; }
 
 		[JsonProperty("score")]
-		public int Score { get; set; }
+		public int? Score { get; set; }
 
 		[JsonProperty("tags")]
 		private string Ptags { get; set; }
