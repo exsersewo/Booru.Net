@@ -13,22 +13,23 @@ namespace Booru.Net
 		[JsonProperty("rating")]
 		private string Prating { get; set; }
 
-		[JsonProperty("file_url")]
-		public string ImageUrl { get; set; }
+        public virtual string ImageUrl { get; set; }
+
+        public virtual string PostUrl { get; set; }
 
 		public Rating Rating
 		{
 			get
 			{
-				if(Prating == "s")
+				if(Prating.ToLowerInvariant().StartsWith("s"))
 				{
 					return Rating.Safe;
 				}
-				if(Prating == "q")
+				if(Prating.ToLowerInvariant().StartsWith("q"))
 				{
 					return Rating.Questionable;
 				}
-				if(Prating == "e")
+				if(Prating.ToLowerInvariant().StartsWith("e"))
 				{
 					return Rating.Explicit;
 				}

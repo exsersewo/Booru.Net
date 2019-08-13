@@ -12,7 +12,7 @@ namespace Booru.Net.Tests
         {
             var BooruClient = new BooruClient();
 
-            var posts = await BooruClient.GetRealBooruImagesAsync();
+            var posts = await BooruClient.GetSafebooruImagesAsync();
 
             Console.ReadLine();
         }

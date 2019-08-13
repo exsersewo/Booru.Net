@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Booru.Net
 {
-    public class SafebooruImage
+    public class SafebooruImage : BooruImage
 	{
 		[JsonProperty("directory")]
 		public string Directory { get; set; }
@@ -13,9 +13,6 @@ namespace Booru.Net
 
 		[JsonProperty("height")]
 		public int Height { get; set; }
-
-		[JsonProperty("id")]
-		public int ID { get; set; }
 
 		[JsonProperty("image")]
 		public string Image { get; set; }
@@ -29,9 +26,6 @@ namespace Booru.Net
 		[JsonProperty("parent_id")]
 		public int? ParentID { get; set; }
 
-		[JsonProperty("rating")]
-		public Rating Rating { get; set; }
-
 		[JsonProperty("sample")]
 		public bool Sample { get; set; }
 
@@ -41,21 +35,19 @@ namespace Booru.Net
 		[JsonProperty("sample_width")]
 		public int SampleWidth { get; set; }
 
-		[JsonProperty("score")]
-		public int? Score { get; set; }
-
 		[JsonProperty("tags")]
 		private string Ptags { get; set; }
 
 		[JsonProperty("width")]
 		public int Width { get; set; }
 
-		public IReadOnlyList<string> Tags { get { return Ptags.Split(' '); } }
+		public IReadOnlyList<string> Tags 
+            => Ptags.Split(' ');
 
-		public virtual string ImageUrl
+		public override string ImageUrl
 			=> "https://safebooru.org/images/" + Directory + "/" + Image;
 
-		public virtual string PostUrl
+		public override string PostUrl
 			=> "https://safebooru.org/index.php?page=post&s=view&id=" + ID;
 	}
 }
