@@ -7,9 +7,6 @@ namespace Booru.Net
 		[JsonProperty("id")]
 		public int ID { get; set; }
 
-		[JsonProperty("score")]
-		public int Score { get; set; }
-
 		[JsonProperty("rating")]
 		private string Prating { get; set; }
 

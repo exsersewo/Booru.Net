@@ -5,6 +5,9 @@ namespace Booru.Net
 {
     public class GelbooruImage : BooruImage
 	{
+		[JsonProperty("score")]
+		public int? Score { get; set; }
+
 		[JsonProperty("directory")]
 		public string Directory { get; set; }
 

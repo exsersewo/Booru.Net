@@ -41,6 +41,9 @@ namespace Booru.Net
 		[JsonProperty("width")]
 		public int Width { get; set; }
 
+		[JsonProperty("score")]
+		public int? Score { get; set; }
+
 		public IReadOnlyList<string> Tags 
             => Ptags.Split(' ');
 

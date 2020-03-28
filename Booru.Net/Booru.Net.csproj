@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <LangVersion>Latest</LangVersion>
     <Authors>exsersewo</Authors>
     <Company />
     <Description>An asynchronous Booru based ImageBoard wrapper.
@@ -16,19 +17,40 @@ Gelbooru,
 Konachan,
 E621 and
 Yande.re</Description>
-    <PackageProjectUrl>https://github.com/systemexit/Booru.Net</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/exsersewo/Booru.Net</PackageProjectUrl>
     <Copyright>exsersewo</Copyright>
-    <RepositoryUrl>https://github.com/systemexit/Booru.Net</RepositoryUrl>
+    <RepositoryUrl>https://github.com/exsersewo/Booru.Net</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>booru imageboard api wrapper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.0.4</Version>
+    <Version>2.0.0.0</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <PackageReleaseNotes>⚠ This version is not compatible with 1.0.0.X code ⚠
+
+Wrapper Restructuring &amp; Seperate out each client from the container client
+Fix bugs presented from some booru's updating</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>None.None.None.None</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>None.None.None.None</AssemblyFileVersionSettings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestEase" Version="1.4.10" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
 
   <ItemGroup>
