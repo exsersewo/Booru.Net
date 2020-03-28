@@ -4,7 +4,10 @@ using System.Collections.Generic;
 namespace Booru.Net
 {
     public class DanbooruImage : BooruImage
-	{		
+	{
+		[JsonProperty("score")]
+		public int? Score { get; set; }
+
 		[JsonProperty("tag_string")]
 		private string TagString { get; set; }
 
