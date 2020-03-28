@@ -8,9 +8,9 @@ namespace Booru.Net
 		public int Up { get; set; }
 
 		[JsonProperty("down")]
-		private int Down { get; set; }
+		public int Down { get; set; }
 
 		[JsonProperty("total")]
-		private int Total { get; set; }
+		public int Total { get; set; }
 	}
 }
