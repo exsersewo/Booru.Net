@@ -10,9 +10,9 @@ namespace Booru.Net
 		[JsonProperty("rating")]
 		private string Prating { get; set; }
 
-        public virtual string ImageUrl { get; set; }
+        public virtual string ImageUrl { get; private set; }
 
-        public virtual string PostUrl { get; set; }
+        public virtual string PostUrl { get; private set; }
 
 		public Rating Rating
 		{

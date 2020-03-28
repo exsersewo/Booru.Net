@@ -24,10 +24,10 @@ Yande.re</Description>
     <PackageTags>booru imageboard api wrapper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <FileVersion>2.0.2.0</FileVersion>
+    <AssemblyVersion>2.0.3.0</AssemblyVersion>
+    <FileVersion>2.0.3.0</FileVersion>
     <PackageReleaseNotes>Readded DanBooruImage#Score from Inheritence Rework</PackageReleaseNotes>
   </PropertyGroup>
 

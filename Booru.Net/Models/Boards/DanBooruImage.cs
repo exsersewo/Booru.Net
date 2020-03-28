@@ -8,6 +8,12 @@ namespace Booru.Net
 		[JsonProperty("score")]
 		public int? Score { get; set; }
 
+		[JsonProperty("file_url")]
+		private string FileUrl { get; set; }
+
+		public override string ImageUrl
+			=> FileUrl;
+
 		[JsonProperty("tag_string")]
 		private string TagString { get; set; }
 

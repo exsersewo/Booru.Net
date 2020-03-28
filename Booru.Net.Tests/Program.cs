@@ -56,7 +56,7 @@ namespace Booru.Net.Tests
 
                 if (posts != null)
                 {
-                    Console.WriteLine(posts.All(x => x != null));
+                    Console.WriteLine(posts.All(x => x.ImageUrl != null));
                 }
             }
             catch(Exception ex)

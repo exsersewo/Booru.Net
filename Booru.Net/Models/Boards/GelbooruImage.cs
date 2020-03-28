@@ -11,6 +11,12 @@ namespace Booru.Net
 		[JsonProperty("directory")]
 		public string Directory { get; set; }
 
+		[JsonProperty("file_url")]
+		private string FileUrl { get; set; }
+
+		public override string ImageUrl
+			=> FileUrl;
+
 		[JsonProperty("tags")]
 		private string Ptags { get; set; }
 
