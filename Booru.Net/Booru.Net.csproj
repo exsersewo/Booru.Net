@@ -26,9 +26,9 @@ Yande.re</Description>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>2.0.3</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>2.0.3.0</AssemblyVersion>
-    <FileVersion>2.0.3.0</FileVersion>
-    <PackageReleaseNotes>Readded DanBooruImage#Score from Inheritence Rework</PackageReleaseNotes>
+    <AssemblyVersion>2020.3.0.0</AssemblyVersion>
+    <FileVersion>2020.3.0.0</FileVersion>
+    <PackageReleaseNotes>Fix some null ref issues with images</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

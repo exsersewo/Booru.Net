@@ -32,7 +32,7 @@ namespace Booru.Net.Tests
                         break;
                     case 1:
                         var p = await new E621Client().GetImagesAsync().ConfigureAwait(false);
-                        Console.WriteLine(p.Posts.All(x => x != null));
+                        Console.WriteLine(p.Posts.Any(x => x.ImageUrl != null));
                         break;
                     case 2:
                         posts = await new GelbooruClient().GetImagesAsync().ConfigureAwait(false);
@@ -56,7 +56,7 @@ namespace Booru.Net.Tests
 
                 if (posts != null)
                 {
-                    Console.WriteLine(posts.All(x => x.ImageUrl != null));
+                    Console.WriteLine(posts.Any(x => x.ImageUrl != null));
                 }
             }
             catch(Exception ex)
