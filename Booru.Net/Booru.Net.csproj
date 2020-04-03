@@ -24,11 +24,11 @@ Yande.re</Description>
     <PackageTags>booru imageboard api wrapper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>2020.4.9.0</AssemblyVersion>
-    <FileVersion>2020.4.9.0</FileVersion>
-    <PackageReleaseNotes>Fix some null ref issues with images</PackageReleaseNotes>
+    <AssemblyVersion>2.0.4.0</AssemblyVersion>
+    <FileVersion>2.0.4.0</FileVersion>
+    <PackageReleaseNotes>Fix E621 Tags</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
