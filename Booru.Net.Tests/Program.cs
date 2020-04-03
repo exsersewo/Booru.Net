@@ -21,42 +21,60 @@ namespace Booru.Net.Tests
         {
             try
             {
-                IEnumerable<BooruImage> posts = null;
-
                 Console.WriteLine(client);
 
-                switch(client)
+                string[] tags = new[] { "corona" };
+
+                switch (client)
                 {
                     case 0:
-                        posts = await new DanbooruClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new DanbooruClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z=>tags.Contains(z) != null)));
+                        }
                         break;
                     case 1:
-                        var p = await new E621Client().GetImagesAsync().ConfigureAwait(false);
-                        Console.WriteLine(p.Posts.Any(x => x.ImageUrl != null));
+                        {
+                            var p = await new E621Client().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(p.Posts.All(x => x.Tags.Any(z => z.Value.Any(y => tags.Contains(y)))));
+                        }
                         break;
                     case 2:
-                        posts = await new GelbooruClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new GelbooruClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
                     case 3:
-                        posts = await new KonaChanClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new KonaChanClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
                     case 4:
-                        posts = await new RealbooruClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new RealbooruClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
                     case 5:
-                        posts = await new Rule34Client().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new Rule34Client().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
                     case 6:
-                        posts = await new SafebooruClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new SafebooruClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
                     case 7:
-                        posts = await new YandereClient().GetImagesAsync().ConfigureAwait(false);
+                        {
+                            var posts = await new YandereClient().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.Any(x => x.Tags.Any(z => tags.Contains(z) != null)));
+                        }
                         break;
-                }
-
-                if (posts != null)
-                {
-                    Console.WriteLine(posts.Any(x => x.ImageUrl != null));
                 }
             }
             catch(Exception ex)

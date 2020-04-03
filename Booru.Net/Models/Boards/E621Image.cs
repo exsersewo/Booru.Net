@@ -26,9 +26,9 @@ namespace Booru.Net
 
 		[JsonProperty("tags")]
 		[JsonConverter(typeof(TagGroupConverter))]
-		private List<Dictionary<string, List<string>>> PTags { get; set; }
+		private Dictionary<string, List<string>> PTags { get; set; }
 
-		public IReadOnlyList<Dictionary<string, List<string>>> Tags { get { return PTags.AsReadOnly(); } }
+		public IReadOnlyDictionary<string, List<string>> Tags { get { return PTags; } }
 
 		public override string ImageUrl => File.Url;
 

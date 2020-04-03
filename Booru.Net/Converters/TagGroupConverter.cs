@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Booru.Net.Converters
 {
@@ -16,25 +17,11 @@ namespace Booru.Net.Converters
         {
             var token = JToken.Load(reader);
 
-            List<Dictionary<string, List<string>>> container = new List<Dictionary<string, List<string>>>();
+            Dictionary<string, List<string>> container = new Dictionary<string, List<string>>();
 
-            foreach(var el in token.Children<JObject>())
+            foreach(JProperty el in token.Values<JProperty>())
             {
-                Dictionary<string, List<string>> att = new Dictionary<string, List<string>>();
-                foreach (JProperty prop in el.Properties())
-                {
-                    List<string> children = new List<string>();
-
-                    foreach(var child in prop.Value.Children())
-                    {
-                        children.Add(child.Value<string>());
-                    }
-
-                    att.Add(prop.Name, children);
-                    break;
-                }
-
-                container.Add(att);
+                container.Add(el.Name, el.Value.Values<string>().ToList());
             }
 
             return container;
