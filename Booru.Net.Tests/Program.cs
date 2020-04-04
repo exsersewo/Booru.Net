@@ -23,7 +23,7 @@ namespace Booru.Net.Tests
             {
                 Console.WriteLine(client);
 
-                string[] tags = new[] { "corona" };
+                List<string> tags = new List<string>{ "corona", "-cum" };
 
                 switch (client)
                 {
@@ -35,8 +35,8 @@ namespace Booru.Net.Tests
                         break;
                     case 1:
                         {
-                            var p = await new E621Client().GetImagesAsync(tags).ConfigureAwait(false);
-                            Console.WriteLine(p.Posts.All(x => x.Tags.Any(z => z.Value.Any(y => tags.Contains(y)))));
+                            var posts = await new E621Client().GetImagesAsync(tags).ConfigureAwait(false);
+                            Console.WriteLine(posts.All(x => x.Tags.Any(z => z.Value.Any(y => tags.Contains(y)))));
                         }
                         break;
                     case 2:

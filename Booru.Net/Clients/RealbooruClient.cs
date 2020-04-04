@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using RestEase;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -7,35 +6,43 @@ using System.Threading.Tasks;
 
 namespace Booru.Net
 {
-    public class RealbooruClient : IPHPBooruClient<RealbooruImage>, IDisposable
+    public class RealbooruClient : IDisposable
     {
-        IPHPBooruClient<RealbooruImage> _api;
+        HttpClient _api;
+        JsonSerializerSettings settings;
 
         public RealbooruClient()
         {
-            var httpClient = new HttpClient
+            _api = new HttpClient
             {
                 BaseAddress = new Uri("https://realbooru.com/")
             };
-            httpClient.DefaultRequestHeaders.Add("User-Agent", $"Booru.Net/v{Props.LibraryVersion} (https://github.com/exsersewo/Booru.Net)");
+            _api.DefaultRequestHeaders.Add("User-Agent", $"Booru.Net/v{Props.LibraryVersion} (https://github.com/exsersewo/Booru.Net)");
 
-            JsonSerializerSettings settings = new JsonSerializerSettings
+            settings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
                 NullValueHandling = NullValueHandling.Ignore
             };
-
-            _api = new RestClient(httpClient)
-            {
-                JsonSerializerSettings = settings
-            }.For<IPHPBooruClient<RealbooruImage>>();
         }
 
-        public async Task<IReadOnlyList<RealbooruImage>> GetImagesAsync(IEnumerable<string> tags)
-            => await _api.GetImagesAsync(tags).ConfigureAwait(false);
+        public Task<IReadOnlyList<RealbooruImage>> GetImagesAsync(IEnumerable<string> tags)
+            => GetImagesAsync(string.Join("%20", tags));
 
-        public async Task<IReadOnlyList<RealbooruImage>> GetImagesAsync(params string[] tags)
-            => await _api.GetImagesAsync(tags).ConfigureAwait(false);
+        public Task<IReadOnlyList<RealbooruImage>> GetImagesAsync(params string[] tags)
+            => GetImagesAsync(string.Join("%20", tags));
+
+        public async Task<IReadOnlyList<RealbooruImage>> GetImagesAsync(string tags)
+        {
+            var get = await _api.GetAsync($"index.php?page=dapi&s=post&q=index&json=1&tags={tags}").ConfigureAwait(false);
+
+            if (!get.IsSuccessStatusCode)
+                throw new HttpRequestException($"Response failed with reason: \"({get.StatusCode}) {get.ReasonPhrase}\"");
+
+            var content = await get.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<IReadOnlyList<RealbooruImage>>(content, settings);
+        }
 
         public void Dispose()
         {

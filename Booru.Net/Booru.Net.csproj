@@ -24,11 +24,11 @@ Yande.re</Description>
     <PackageTags>booru imageboard api wrapper</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>2.0.4</Version>
+    <Version>2.0.5</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <AssemblyVersion>2.0.4.0</AssemblyVersion>
-    <FileVersion>2.0.4.0</FileVersion>
-    <PackageReleaseNotes>Fix E621 Tags</PackageReleaseNotes>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <FileVersion>2.0.5.0</FileVersion>
+    <PackageReleaseNotes>Tags now work</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -46,7 +46,6 @@ Yande.re</Description>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestEase" Version="1.4.10" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
 
